@@ -48,18 +48,24 @@ if (!fs.existsSync(uploadsPath)) {
   fs.mkdirSync(uploadsPath, { recursive: true });
 }
 
+// Mount uploads static path
 app.use('/uploads', express.static(uploadsPath));
+app.use('/_/backend/uploads', express.static(uploadsPath));
 
 // API Routes Mapping
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/projects', projectRoutes);
-app.use('/api/proposals', proposalRoutes);
-app.use('/api/chat', chatRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/reviews', reviewRoutes);
-app.use('/api/notifications', notificationRoutes);
-app.use('/api/admin', adminRoutes);
+const apiRouter = express.Router();
+apiRouter.use('/auth', authRoutes);
+apiRouter.use('/users', userRoutes);
+apiRouter.use('/projects', projectRoutes);
+apiRouter.use('/proposals', proposalRoutes);
+apiRouter.use('/chat', chatRoutes);
+apiRouter.use('/payments', paymentRoutes);
+apiRouter.use('/reviews', reviewRoutes);
+apiRouter.use('/notifications', notificationRoutes);
+apiRouter.use('/admin', adminRoutes);
+
+app.use('/api', apiRouter);
+app.use('/_/backend/api', apiRouter);
 
 // Root test endpoint
 app.get('/', (req, res) => {
