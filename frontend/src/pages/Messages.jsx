@@ -346,7 +346,7 @@ export const Messages = () => {
                         {msg.attachment?.url && (
                           <div className={`mt-2 ${msg.message ? 'border-t border-white/20 pt-2' : ''}`}>
                             <a 
-                              href={`http://localhost:5000${msg.attachment.url}`} 
+                              href={`http://localhost:5001${msg.attachment.url}`} 
                               target="_blank" 
                               rel="noreferrer"
                               className="inline-flex items-center gap-1 font-semibold text-[10px] hover:underline"
