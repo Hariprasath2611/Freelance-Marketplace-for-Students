@@ -6,6 +6,7 @@ const onlineUsers = new Map(); // Maps userId -> socketId
 
 export const initSocket = (server) => {
   io = new Server(server, {
+    path: '/_/backend/socket.io',
     cors: {
       origin: '*', // Allow all origins in dev, can customize for production
       methods: ['GET', 'POST']
