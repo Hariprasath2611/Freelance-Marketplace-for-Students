@@ -387,7 +387,7 @@ export const Workspace = () => {
                   <div key={idx} className="p-2 bg-slate-50/50 dark:bg-darkCard/40 border border-slate-100 dark:border-darkBorder/40 rounded-lg flex items-center justify-between text-[10px]">
                     <span className="font-semibold text-slate-600 dark:text-slate-300 truncate max-w-[120px]">{file.name}</span>
                     <a 
-                      href={`http://localhost:5000${file.fileUrl}`} 
+                      href={`http://localhost:5001${file.fileUrl}`} 
                       download
                       target="_blank"
                       rel="noreferrer"
