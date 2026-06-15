@@ -10,8 +10,13 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user && user._id) {
-      const socketUrl = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5001';
-      const newSocket = io(socketUrl);
+      const socketUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? (import.meta.env.VITE_SOCKET_URL || 'http://localhost:5001')
+        : window.location.origin;
+
+      const newSocket = io(socketUrl, {
+        path: '/_/backend/socket.io'
+      });
       
       newSocket.emit('join', user._id);
       setSocket(newSocket);
