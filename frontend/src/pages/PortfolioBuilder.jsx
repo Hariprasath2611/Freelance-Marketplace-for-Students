@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import { 
   Sparkles, CheckCircle2, AlertCircle, Plus, Trash2, 
-  Upload, Github, Globe, FileText, ChevronRight 
+  Upload, Code, Globe, FileText, ChevronRight 
 } from 'lucide-react';
 
 export const PortfolioBuilder = () => {
@@ -235,7 +235,7 @@ export const PortfolioBuilder = () => {
                       <div className="flex gap-2">
                         {item.githubLink && (
                           <a href={item.githubLink} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900 dark:hover:text-white">
-                            <Github size={14} />
+                            <Code size={14} />
                           </a>
                         )}
                         {item.liveLink && (
