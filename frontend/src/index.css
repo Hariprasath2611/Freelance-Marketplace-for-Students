@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../src/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --color-primary-50: #f4f7fe;
+  --color-primary-100: #e8eeff;
+  --color-primary-200: #d5e0ff;
+  --color-primary-300: #b4c8ff;
+  --color-primary-400: #8ca6ff;
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --color-primary-700: #3730a3;
+  --color-primary-800: #312e81;
+  --color-primary-900: #1e1b4b;
+  
+  --color-darkBg: #0b0f19;
+  --color-darkCard: #151d30;
+  --color-darkBorder: #222f4c;
+
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
 
 @layer base {
   :root {
