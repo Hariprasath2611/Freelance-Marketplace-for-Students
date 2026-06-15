@@ -38,6 +38,7 @@ const userSchema = new mongoose.Schema({
     website: { type: String, default: '' }
   },
   isVerified: { type: Boolean, default: false },
+  isBanned: { type: Boolean, default: false },
   verificationToken: { type: String },
   resetPasswordToken: { type: String },
   resetPasswordExpire: { type: Date }
